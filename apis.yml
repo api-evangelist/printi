@@ -1,0 +1,99 @@
+aid: printi
+url: https://raw.githubusercontent.com/api-evangelist/printi/refs/heads/main/apis.yml
+name: Printi
+kind: company
+description: >-
+  Printi is a Brazilian online commercial print marketplace founded in 2012 and
+  based in Barueri / Sao Paulo, offering business cards, flyers, stationery,
+  labels and stickers, packaging, brochures and folders, and promotional items
+  through an online configurator that prices each job dynamically by format,
+  paper, finish, and quantity. Printi is a Cimpress brand - Vistaprint took a
+  minority stake in 2014 and Cimpress acquired a majority stake in 2020 - and
+  sits in the same Cimpress portfolio as Vistaprint. Printi formerly published a
+  public developer portal at developer.printi.com.br ("Printi API", hosted on
+  ReadMe with a Run in Postman button) covering catalog, quoting, and order
+  operations, but that portal is no longer resolvable and appears decommissioned.
+  There is no live, documented, self-serve public API today; programmatic and
+  reseller integration is now partner-gated, channeled through Cimpress's
+  mass-customization / developer platform and Printi's "Comprar com Vendedor"
+  reseller channel. The APIs below are modeled from the historical portal and
+  observable storefront behavior - they are NOT sourced from a currently
+  published public specification (see review.yml, endpointsModeled).
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+tags:
+- Printing
+- Print on Demand
+- Commercial Print
+- Marketplace
+- Ecommerce
+- Brazil
+- Cimpress
+- Partner Gated
+created: '2026-07-11'
+modified: '2026-07-11'
+specificationVersion: '0.19'
+apis:
+- aid: printi:printi-products-catalog-api
+  name: Printi Products Catalog API
+  tags:
+  - Products
+  - Catalog
+  - Print
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://www.printi.com.br
+  description: >-
+    Modeled catalog surface for browsing Printi's printable product lines
+    (business cards, flyers, stationery, labels, packaging, promotional items)
+    and their configurable options - format, paper stock, finish, and quantity
+    tiers. Inferred from the retired developer.printi.com.br portal and the live
+    storefront configurator; endpoints are modeled, not sourced from a currently
+    published public specification. Not verified against a live public spec.
+  properties:
+  - url: https://www.printi.com.br
+    type: Website
+- aid: printi:printi-quotes-pricing-api
+  name: Printi Quotes and Pricing API
+  tags:
+  - Quotes
+  - Pricing
+  - Print
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://www.printi.com.br
+  description: >-
+    Modeled quoting surface that returns a price for a chosen product
+    configuration - product, format, paper, finish, quantity, and delivery -
+    mirroring the storefront's dynamic configurator (for example flyers from 250
+    units). Printi prices per job at quote time rather than from a fixed public
+    price list, so there is no public tiered plan catalog. Endpoints are modeled,
+    not sourced from a currently published public specification.
+  properties:
+  - url: https://www.printi.com.br
+    type: Website
+- aid: printi:printi-orders-api
+  name: Printi Orders API
+  tags:
+  - Orders
+  - Fulfillment
+  - Print
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://www.printi.com.br
+  description: >-
+    Modeled order surface for submitting an accepted quote as a print order,
+    attaching artwork, and tracking production and delivery status. Inferred from
+    the retired Printi developer portal and Printi's reseller ("Comprar com
+    Vendedor") flow; in practice this capability is partner-gated today via
+    Cimpress's platform. Endpoints are modeled, not sourced from a currently
+    published public specification.
+  properties:
+  - url: https://www.printi.com.br
+    type: Website
+common:
+- type: LinkedIn
+  url: https://www.linkedin.com/company/printi
+- type: Website
+  url: https://www.printi.com.br
+- type: Reseller
+  url: https://www.printi.com.br/comprar-com-vendedor
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

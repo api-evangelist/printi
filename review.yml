@@ -1,0 +1,121 @@
+aid: printi
+name: Printi
+review:
+  question: Does Printi expose a documented public WebSocket API?
+  answer: false
+  date: '2026-07-11'
+  reviewer: API Evangelist
+  asyncapiSpecCreated: false
+  asyncapiScopeNote: |
+    No AsyncAPI document was authored. Printi does not publish any documented
+    public real-time transport. Printi formerly ran a public REST developer
+    portal (developer.printi.com.br, "Printi API"), and that portal is now
+    offline; there was never a documented WebSocket or SSE surface to model.
+    Printi's storefront and its internal admin backend (api.printi.com.br) are
+    request/response HTTP, not server-push. There is no public server-push
+    transport on any Printi property to represent in AsyncAPI.
+findings:
+  summary: |
+    Printi does not publish a documented public WebSocket API, and as of the
+    review date it does not publish a live, self-serve public developer API at
+    all. Printi is a Brazilian online commercial print marketplace (founded
+    2012, Barueri / Sao Paulo) and a Cimpress brand - Vistaprint took a minority
+    stake in 2014 and Cimpress acquired a majority stake in 2020. Printi
+    historically operated a public developer portal at developer.printi.com.br
+    titled "Printi API" (hosted on ReadMe, with a Run in Postman button; the
+    homepage is preserved in the Wayback Machine). That subdomain no longer
+    resolves in DNS and the portal appears decommissioned. The host
+    api.printi.com.br today returns an internal Angular single-page app titled
+    "Printi Admin - Main Page" (a back-office dashboard, not public API
+    documentation), and its /health endpoint returns 200 while /v1, /docs,
+    /swagger, and /openapi.json all return 404. The former US property
+    printi.com now redirects to www.printi.com.br. Programmatic and reseller
+    integration is partner-gated - channeled through Cimpress's
+    mass-customization / developer platform and Printi's "Comprar com Vendedor"
+    reseller channel - rather than through an open public API.
+  accessModel: |
+    Partner-gated / no live public self-serve API. A public REST developer
+    portal existed historically but has been retired. No public sign-up,
+    published base URL, published authentication scheme, or published endpoint
+    reference is currently available for Printi's own API. Integration requires
+    a reseller / partner relationship, and Cimpress (Printi's parent) operates
+    its own developer program for network integration.
+  endpointsModeled: true
+  endpointsModeledNote: |
+    No endpoints are confirmed against a currently published public Printi
+    specification. The API areas captured in apis.yml (Products / Catalog,
+    Quotes / Pricing, Orders) are MODELED from (a) the existence and title of
+    the retired developer.printi.com.br "Printi API" portal, and (b) the
+    observable behavior of the live storefront configurator (which prices each
+    job dynamically by product, format, paper, finish, and quantity). No
+    OpenAPI, plans, rate-limit, finops, or collection artifacts were authored
+    because there is no real sourced endpoint, pricing-tier, or rate-limit
+    information to ground them; Printi prices per quote rather than from a fixed
+    public plan catalog. These modeled areas must not be treated as verified
+    endpoints.
+  transports:
+    - protocol: REST
+      scheme: https
+      documented: false
+      note: >-
+        Printi formerly documented a public REST API at developer.printi.com.br
+        ("Printi API", ReadMe-hosted). That portal is offline and its DNS no
+        longer resolves; no current public REST reference is published.
+    - protocol: HTTP
+      scheme: https
+      baseURL: https://api.printi.com.br
+      documented: false
+      note: >-
+        api.printi.com.br serves an internal Angular back-office app ("Printi
+        Admin - Main Page"), not public API documentation. /health returns 200;
+        /v1, /docs, /swagger, /openapi.json return 404. Not a documented public
+        developer surface.
+    - protocol: WebSocket
+      scheme: wss
+      documented: false
+      note: >-
+        No WebSocket (ws:// or wss://) endpoint is documented on any Printi
+        property as of the review date, and none appears in the archived
+        developer portal.
+  endpointsConfirmedRest: []
+sources:
+  - url: https://www.printi.com.br
+    type: Website
+    note: >-
+      Live storefront. Product catalog plus dynamic configurator pricing by
+      format, paper, finish, and quantity (e.g. flyers from 250 units). No
+      developer or API link surfaced in the consumer navigation.
+  - url: https://developer.printi.com.br/
+    type: Documentation
+    note: >-
+      Former public developer portal titled "Printi API" (ReadMe-hosted, Run in
+      Postman button). DNS no longer resolves; only the homepage is preserved in
+      the Wayback Machine (closest snapshot 2024-08-29). Appears decommissioned.
+  - url: https://api.printi.com.br/
+    type: APIReference
+    note: >-
+      Returns an internal Angular SPA "Printi Admin - Main Page" (back-office
+      dashboard), not public docs. Probed /health 200; /v1, /docs, /swagger,
+      /openapi.json all 404.
+  - url: https://www.linkedin.com/company/printi
+    type: LinkedIn
+    note: Company profile - online printing, Sao Paulo, founded 2012.
+  - url: https://techcrunch.com/2014/10/06/vistaprint-buys-25-million-minority-stake-in-sao-paulo-based-printi/
+    type: Reference
+    note: Vistaprint took a 25M USD minority stake in Printi in 2014.
+  - url: https://en.wikipedia.org/wiki/Cimpress
+    type: Reference
+    note: >-
+      Printi is listed among Cimpress brands alongside Vistaprint; Cimpress
+      acquired a majority stake in Printi in 2020.
+actions:
+  asyncapiPath: null
+  apisYmlUpdated: true
+  reason: |
+    Printi has no documented public WebSocket API and no live public self-serve
+    API surface to enumerate. A public REST developer portal existed
+    historically (developer.printi.com.br) but is retired, so no AsyncAPI,
+    OpenAPI, plans, rate-limits, finops, or collection artifacts were created.
+    apis.yml documents the provider honestly as a partner-gated / retired-portal
+    case, with Products / Catalog, Quotes / Pricing, and Orders captured as
+    MODELED API areas (endpointsModeled: true) rather than verified endpoints.
