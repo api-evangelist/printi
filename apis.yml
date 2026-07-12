@@ -88,6 +88,10 @@ apis:
   - url: https://www.printi.com.br
     type: Website
 common:
+- type: VulnerabilityDisclosure
+  url: security/printi-vulnerability-disclosure.yml
+- type: DomainSecurity
+  url: security/printi-domain-security.yml
 - type: LinkedIn
   url: https://www.linkedin.com/company/printi
 - type: Website
