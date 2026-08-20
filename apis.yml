@@ -36,6 +36,15 @@ tags:
 - Print on Demand
 - Commercial Print
 - Marketplace
+- E-Commerce
+- Brazil
+- Cimpress
+- Partner Gated
+tags_raw:
+- Printing
+- Print on Demand
+- Commercial Print
+- Marketplace
 - Ecommerce
 - Brazil
 - Cimpress
@@ -47,6 +56,10 @@ apis:
 - aid: printi:printi-products-catalog-api
   name: Printi Products Catalog API
   tags:
+  - Product
+  - Catalog
+  - Print
+  tags_raw:
   - Products
   - Catalog
   - Print
@@ -83,6 +96,10 @@ apis:
 - aid: printi:printi-orders-api
   name: Printi Orders API
   tags:
+  - Order
+  - Fulfillment
+  - Print
+  tags_raw:
   - Orders
   - Fulfillment
   - Print
