@@ -19,6 +19,17 @@ description: >-
   reseller channel. The APIs below are modeled from the historical portal and
   observable storefront behavior - they are NOT sourced from a currently
   published public specification (see review.yml, endpointsModeled).
+deliveryModel:
+  model: unknown
+  open_source: false
+  commercial: false
+  callable_host: false
+  label: Delivery model not determined — needs a product licence on record
+  confidence: low
+  source:
+  - none
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: unknown
   onboarding: unknown
