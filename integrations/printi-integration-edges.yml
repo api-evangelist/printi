@@ -1,0 +1,16 @@
+generated: '2026-10-12'
+method: none
+source:
+- https://zapier.com/apps/printi/integrations
+- https://n8n.io/integrations/printi/
+- https://composio.dev/toolkits/printi
+- https://monid.ai/tools/printi
+checked:
+- https://composio.dev/toolkits/printi
+- https://monid.ai/tools/printi
+- https://n8n.io/integrations/printi/
+- https://zapier.com/apps/printi/integrations
+summary: null
+marketplace_apps: []
+edges: []
+templates: []
